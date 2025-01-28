@@ -17,10 +17,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            //"outputPath": "web",
-            "outputPath": "",
-            "baseHref": "/",
-            //"baseHref": "/testport/web/browser",
+            "outputPath": "web",
+            //"outputPath": "",
+            //"baseHref": "/",
+            "baseHref": "/testport/web/browser",
             "deployUrl": "/",
             "index": "src/index.html",
             "browser": "src/main.ts",
