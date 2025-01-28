@@ -20,7 +20,7 @@
             "outputPath": "web",
             //"outputPath": "",
             //"baseHref": "/",
-            "baseHref": "/portfolio/web/browser",
+            "baseHref": "/portfolio/web/browser/",
             "deployUrl": "/",
             "index": "src/index.html",
             "browser": "src/main.ts",
