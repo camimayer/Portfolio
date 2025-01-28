@@ -1,0 +1,152 @@
+app-chat{
+  overflow-x: hidden !important;
+}
+.chat-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background-color: #0078d7;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: pulse 2s infinite;
+
+  &:hover {
+    background-color: #005ca9;
+  }
+
+  .material-icons {
+    font-size: 24px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1100;
+  display: none;
+
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  &.open {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .chat-header {
+    background: #0078d7;
+    color: #fff;
+    padding: 10px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .close-icon {
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 8px;
+      line-height: 1;
+    }
+  }
+
+  .chat-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+
+    .messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+
+      .message {
+        margin-bottom: 8px;
+        padding: 8px 12px;
+        border-radius: 4px;
+        max-width: 80%;
+        word-wrap: break-word;
+
+        &.user-message {
+          background: #0078d7;
+          color: #fff;
+          margin-left: auto;
+        }
+
+        &.ai-message {
+          background: #f1f1f1;
+          color: #333;
+          margin-right: auto;
+        }
+      }
+    }
+
+    .input-area {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      textarea {
+        height: 60px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 8px;
+        resize: none;
+      }
+
+      button {
+        align-self: flex-end;
+        background: #0078d7;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background: #005ca9;
+        }
+      }
+    }
+  }
+}

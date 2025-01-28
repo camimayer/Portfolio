@@ -1,0 +1,48 @@
+.contact-page {
+  font-family: 'Roboto', sans-serif;
+}
+
+.info-item i {
+  display: block;
+}
+
+h1 {
+  color: #2c3e50 !important;
+}
+
+.github-card img {
+  border: 3px solid #0078D7;
+  transition: transform 0.3s ease;
+}
+
+.github-card img:hover {
+  transform: scale(1.1);
+}
+
+.github-card a.btn {
+  margin-top: 1rem;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-info .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+}
+
+.contact-info .col-md-6 {
+  display: flex;
+  flex-direction: column;
+}

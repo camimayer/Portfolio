@@ -1,0 +1,43 @@
+<!-- Botão flutuante para abrir/fechar o chat -->
+<button class="chat-fab" (click)="toggleChat()" *ngIf="!isOpen">
+  <span class="material-icons">
+    <i class="bi bi-chat-dots"></i>
+  </span>
+</button>
+
+
+<!-- Container do chat -->
+<div class="chat-container" [class.open]="isOpen">
+  <!-- Cabeçalho do chat -->
+  <div class="chat-header">
+    <span><i class="bi bi-robot"></i> Chat</span>
+    <span class="close-icon" (click)="toggleChat()">×</span>
+  </div>
+
+  <!-- Corpo do chat -->
+  <div class="chat-body">
+    <!-- Lista de mensagens -->
+    <div class="messages" #scrollMe>
+      <div
+        class="message"
+        *ngFor="let msg of messages"
+        [ngClass]="{
+          'user-message': msg.role === 'user',
+          'ai-message': msg.role === 'assistant'
+        }"
+      >
+        {{ msg.content }}
+      </div>
+    </div>
+
+    <!-- Área de input -->
+    <div class="input-area">
+      <textarea
+        [(ngModel)]="userInput"
+        placeholder="Type your message"
+        (keydown.enter)="sendMessage()"
+      ></textarea>
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
